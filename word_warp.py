@@ -82,6 +82,7 @@ class WordWarp():
         word_length = len(word)
         
         if word_length in range(3, 7) and word in self.words[word_length]:
+            del self.words[word_length][word]
             self.list_lengths[word_length] -= 1
             self.check_end_game()
 
