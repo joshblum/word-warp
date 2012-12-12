@@ -3,8 +3,6 @@ from constants import *
 from itertools import permutations
 import random
 import pickle
-
-#import pdb; pdb.set_trace()
            
 class WordWarp():
 
@@ -31,7 +29,7 @@ class WordWarp():
         self.help = [
             'To check the number of words left enter "%s".' % self.cmds['words'],
             'To warp type "%s".' % self.cmds['warp'],
-            'Exit by pressing typing "%s".' % self.cmds['exit'],
+            'Exit by entering "%s".' % self.cmds['exit'],
             'Start a new game by entering "%s".' % self.cmds['start'],
             'To see these options again type "%s".' % self.cmds['help'],
         ]
