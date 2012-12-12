@@ -4,7 +4,7 @@ from itertools import permutations
 import random
 import pickle
 
-#mport pdb; pdb.set_trace()
+#import pdb; pdb.set_trace()
            
 class WordWarp():
 
@@ -92,7 +92,7 @@ class WordWarp():
             print self.end
             
     def warp(self):
-        print random.choice(self.answer_perms)
+        print "\n%s\n" % random.choice(self.answer_perms)
         
     def words_left(self):
         for index, length in enumerate(self.list_lengths):
