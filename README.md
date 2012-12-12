@@ -5,4 +5,5 @@ Rewrite of old python project.
 
 Setup
 -----------------------------
-python word-warp.py
+
+    python word-warp.py
