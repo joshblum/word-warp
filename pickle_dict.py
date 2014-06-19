@@ -1,29 +1,27 @@
 """
     Parses flat text file of english words and writes them into a pickle dictionary
 """
-from constants import *
-
 import pickle
+import os
+
+from constants import WORDS_FILE, DICT_FILE
+
 
 def main():
-    
-    word_dict = {
-        3 : {},
-        4 : {},
-        5 : {},
-        6 : {},
-    }
+
+    word_dict = dict.fromkeys([3, 4, 5, 6], set())
     print "Starting..."
     print "Reading", WORDS_FILE
+    valid_sizes = set(range(3, 7))
     with open(WORDS_FILE) as f:
         for line in f:
-            word = line.strip('\r\n')
+            word = line.strip(os.linesep)
             size = len(word)
-            if size in range(3,7):
-                dic = word_dict[size]
-                dic[word] = word
+            if size in valid_sizes:
+                print word_dict[size]
+                word_dict[size].add(word)
     print "Writing pickle", DICT_FILE
-    with  open(DICT_FILE, 'wb') as pickle_dict:
+    with open(DICT_FILE, 'wb') as pickle_dict:
         pickle.dump(word_dict, pickle_dict)
     print "Done."
 
